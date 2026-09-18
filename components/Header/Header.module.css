@@ -1,0 +1,17 @@
+.header {
+  position: fixed;
+  z-index: 10;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  min-height: 60px;
+  max-width: min(calc(100% - 20px), 1200px);
+}
+
+.container {
+  width: 100%;
+  min-height: 60px;
+  position: relative;
+  /* background-color: rgba(210, 105, 30, 0.8); */
+}

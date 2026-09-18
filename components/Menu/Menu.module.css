@@ -1,0 +1,14 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  list-style: none;
+}
+
+.menu li {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-decoration: none;
+}

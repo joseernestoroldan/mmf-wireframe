@@ -1,0 +1,30 @@
+.content {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 90vh;
+  z-index: 20;
+  color: white;
+  top: -10px;
+  border-radius: 10px;
+  padding: 50px;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
