@@ -1,0 +1,59 @@
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  display: flex;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  color: #ffffff;
+  background: rgba(14, 25, 22, 0.2);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  line-height: 0;
+  padding: 0;
+  transform: translateY(-50%);
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.arrow:hover,
+.arrow:focus-visible {
+  border-color: rgba(214, 231, 184, 0.9);
+  background: rgba(49, 88, 74, 0.82);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.arrow:focus-visible {
+  outline: 2px solid #d6e7b8;
+  outline-offset: 4px;
+}
+
+.arrowIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
+  transform: translateY(-0.32px);
+}
+
+@media (max-width: 700px) {
+  .arrow {
+    top: auto;
+    bottom: 34.4px;
+    right: 16px;
+    transform: none;
+  }
+
+  .arrow:hover,
+  .arrow:focus-visible {
+    transform: scale(1.06);
+  }
+}

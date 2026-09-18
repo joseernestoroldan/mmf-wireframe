@@ -1,0 +1,252 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  color: #ffffff;
+  background: #17211f;
+}
+
+.slide {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+.image,
+.scrim {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  z-index: -2;
+  object-fit: cover;
+  object-position: center;
+}
+
+.scrim {
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(14, 25, 22, 0.36) 0%,
+      rgba(14, 25, 22, 0.22) 52%,
+      rgba(14, 25, 22, 0.14) 100%
+    ),
+    linear-gradient(0deg, rgba(14, 25, 22, 0.16) 0%, transparent 42%);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: min(100% - 48px, 1200px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 112px 0px 128px;
+}
+
+.counter {
+  margin-bottom: 16px;
+  color: #d6e7b8;
+  font-size: 12.8px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.title {
+  max-width: 672px;
+  margin-bottom: 16px;
+  color: #ffffff;
+  font-size: clamp(40px, 6vw, 92px);
+  font-weight: 700;
+  line-height: 0.98;
+}
+
+.description {
+  max-width: 528px;
+  margin-bottom: 28px;
+  color: #edf3e6;
+  font-size: 17.6px;
+  line-height: 1.6;
+}
+
+.link {
+  width: fit-content;
+  padding-bottom: 5.6px;
+  border-bottom: 1px solid #d6e7b8;
+  color: #ffffff;
+  font-size: 14.4px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.link:hover,
+.link:focus-visible {
+  color: #d6e7b8;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  color: #ffffff;
+  background: rgba(14, 25, 22, 0.2);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  line-height: 0;
+  padding: 0;
+  transform: translateY(-50%);
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.arrow:hover,
+.arrow:focus-visible {
+  border-color: rgba(214, 231, 184, 0.9);
+  background: rgba(49, 88, 74, 0.82);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.arrow:focus-visible,
+.dot:focus-visible {
+  outline: 2px solid #d6e7b8;
+  outline-offset: 4px;
+}
+
+.arrowIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 300;
+  background-color: red;
+  color: blue;
+  margin: 0;
+  padding: 0;
+}
+
+.previous {
+  left: 24px;
+}
+
+.next {
+  right: 24px;
+}
+
+.navigation {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transform: translateX(-50%);
+}
+
+.navigationCount {
+  margin-right: 2.4px;
+  color: #d6e7b8;
+  font-size: 11.2px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.dot {
+  width: 21.6px;
+  height: 21.6px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.72;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.dot::before {
+  display: block;
+  width: 6.72px;
+  height: 6.72px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.76);
+  border-radius: 50%;
+  content: "";
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.dot:hover,
+.dot:focus-visible,
+.activeDot {
+  opacity: 1;
+}
+
+.dot:hover::before,
+.dot:focus-visible::before,
+.activeDot::before {
+  border-color: #d6e7b8;
+  background: #d6e7b8;
+}
+
+.activeDot {
+  transform: scale(1.08);
+}
+
+.activeDot::before {
+  transform: scale(1.35);
+}
+
+@media (max-width: 700px) {
+  .content {
+    width: min(100% - 32px, 1200px);
+    padding: 96px 20px 128px;
+  }
+
+  .description {
+    max-width: 400px;
+    font-size: 16px;
+  }
+
+  .arrow {
+    top: auto;
+    bottom: 34.4px;
+    width: 44px;
+    height: 44px;
+    transform: none;
+  }
+
+  .arrow:hover,
+  .arrow:focus-visible {
+    transform: scale(1.06);
+  }
+
+  .previous {
+    left: 16px;
+  }
+
+  .next {
+    right: 16px;
+  }
+
+  .navigation {
+    bottom: 19.2px;
+  }
+}
