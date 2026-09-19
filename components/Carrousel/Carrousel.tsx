@@ -12,17 +12,23 @@ import Navbar from "../Navbar/Navbar";
 
 const Carrousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isFading, setIsFading] = useState(false);
+
+  const changeSlide = (newIndex: number) => {
+    if (newIndex === activeIndex || isFading) return;
+    setIsFading(true);
+    setTimeout(() => {
+      setActiveIndex(newIndex);
+      setIsFading(false);
+    }, 300); // 300ms matches the CSS transition duration
+  };
 
   const showPrevious = () => {
-    setActiveIndex((currentIndex) =>
-      currentIndex === 0 ? carouselItems.length - 1 : currentIndex - 1,
-    );
+    changeSlide(activeIndex === 0 ? carouselItems.length - 1 : activeIndex - 1);
   };
 
   const showNext = () => {
-    setActiveIndex((currentIndex) =>
-      currentIndex === carouselItems.length - 1 ? 0 : currentIndex + 1,
-    );
+    changeSlide(activeIndex === carouselItems.length - 1 ? 0 : activeIndex + 1);
   };
 
   const activeItem = carouselItems[activeIndex];
@@ -39,7 +45,7 @@ const Carrousel = () => {
           sizes="100vw"
         />
         <div className={styles.scrim} />
-        <div className={styles.content}>
+        <div className={`${styles.content} ${isFading ? styles.fadeOut : styles.fadeIn}`}>
           <p className={styles.counter}>
             {String(activeIndex + 1).padStart(2, "0")} / {String(carouselItems.length).padStart(2, "0")}
           </p>
@@ -64,7 +70,7 @@ const Carrousel = () => {
             className={`${styles.dot} ${index === activeIndex ? styles.activeDot : ""}`}
             type="button"
             key={item.href}
-            onClick={() => setActiveIndex(index)}
+            onClick={() => changeSlide(index)}
             aria-label={`Show slide ${index + 1}: ${item.title}`}
             aria-current={index === activeIndex ? "true" : undefined}
           />
