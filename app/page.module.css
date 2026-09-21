@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--font-geist-sans);
-  background-color: var(--background);
+  /* background-color: var(--background); */
 }
 
 .main {
@@ -16,11 +16,11 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  background-color: var(--background);
+  /* background-color: var(--background); */
 }
 
 .container {
   width: 100%;
   min-height: 100vh;
-  background-color: gray;
+  background-color: white;
 }
