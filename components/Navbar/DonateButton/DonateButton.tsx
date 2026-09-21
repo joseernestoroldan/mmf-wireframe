@@ -1,9 +1,10 @@
+import HeartIcon from "../../Icons/HeartIcon";
 import styles from "./DonateButton.module.css";
 
 const DonateButton = () => {
   return (
     <button className={styles.donateButton} type="button">
-      Donate
+      Donate <HeartIcon className={styles.icon} />
     </button>
   );
 };
