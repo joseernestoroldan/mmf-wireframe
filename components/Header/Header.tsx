@@ -1,9 +1,9 @@
 "use client";
-import Logo from "@/components/Logo/Logo";
-import Navbar from "@/components/Navbar/Navbar";
+import Logo from "@/components/Header/Logo/Logo";
+import Navbar from "@/components/Header/Navbar/Navbar";
 import styles from "./Header.module.css";
 import { useState } from "react";
-import Content from "../Navbar/Content/Content";
+import Content from "./Navbar/Content/Content";
 
 type NavbarType = "menu" | "our work" | "about us" | "get involved";
 

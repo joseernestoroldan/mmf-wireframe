@@ -16,7 +16,7 @@ const Navbar = ({ navbarState, setNavbarState }: NavbarProps) => {
       className={`${styles.navbar} ${navbarState === "menu" ? styles.visible : styles.hidden}`}
     >
       <Menu setNavbarState={setNavbarState} />
-      <DonateButton/>
+      <DonateButton />
     </nav>
   );
 };

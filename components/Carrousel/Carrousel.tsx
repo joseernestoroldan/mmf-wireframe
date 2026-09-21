@@ -6,9 +6,7 @@ import { carouselItems } from "../../data/Carrousel";
 import NextArrow from "./Arrows/NextArrow";
 import PreviousArrow from "./Arrows/PreviousArrow";
 import styles from "./Carrousel.module.css";
-import Navbar from "../Navbar/Navbar";
-
-
+import Navbar from "../Header/Navbar/Navbar";
 
 const Carrousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -44,7 +42,9 @@ const Carrousel = () => {
           sizes="100vw"
         />
         <div className={styles.scrim} />
-        <div className={`${styles.content} ${isFading ? styles.fadeOut : styles.fadeIn}`}>
+        <div
+          className={`${styles.content} ${isFading ? styles.fadeOut : styles.fadeIn}`}
+        >
           <h2 className={styles.title}>{activeItem.title}</h2>
           <p className={styles.description}>{activeItem.description}</p>
           <a className={styles.link} href={activeItem.href}>
@@ -73,4 +73,4 @@ const Carrousel = () => {
   );
 };
 
-export default Carrousel
+export default Carrousel;
