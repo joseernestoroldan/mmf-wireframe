@@ -9,23 +9,8 @@
   padding-top: 8px;
   height: 100%;
 
-  /*
-   * Mosaic layout (3 columns):
-   *
-   *  ┌────────────┬───────────────┬────────────┐
-   *  │  rescue    │  cnvr         │ care-center│
-   *  ├────────────┤               ├────────────┤
-   *  │ sanctuary  │               │ education  │
-   *  ├────────────┼───────────────┼────────────┤
-   *  │  relief    │  relief       │ adoption   │
-   *  └────────────┴───────────────┴────────────┘
-   */
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto auto;
-  grid-template-areas:
-    "rescue      cnvr        care-center"
-    "sanctuary   cnvr        education"
-    "relief      relief      adoption";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
 
   animation: menuIn 0.35s ease-out both;
 }
@@ -41,7 +26,7 @@
   }
 }
 
-/* ─── Menu Item (base) ─── */
+/* ─── Menu Item ─── */
 .menuItem {
   display: flex;
   align-items: center;
@@ -49,21 +34,21 @@
   padding: 20px 20px;
   border-radius: var(--radius);
   text-decoration: none;
-  color: white;
+  color: #1f2937;
   cursor: pointer;
   position: relative;
   overflow: hidden;
 
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(31, 41, 55, 0.03);
+  border: 1px solid rgba(31, 41, 55, 0.1);
   transition: background 0.25s ease,
               border-color 0.25s ease,
               transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .menuItem:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(31, 41, 55, 0.06);
+  border-color: rgba(31, 41, 55, 0.18);
   transform: translateY(-1px);
 }
 
@@ -90,90 +75,6 @@
 
 .menuItem:hover .thumbImage {
   transform: scale(1.1);
-}
-
-/* ─── No-Thumbnail variant ─── */
-.noThumb {
-  padding-left: 20px;
-}
-
-.noThumb::before {
-  content: "";
-  display: block;
-  flex-shrink: 0;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--foreground, #0891b2);
-  opacity: 0.55;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.noThumb:hover::before {
-  opacity: 1;
-  transform: scale(1.4);
-}
-
-/* ─── Vertical (stacked) variant ─── */
-.vertical {
-  padding: 0;
-  align-items: flex-end;
-  border: none;
-}
-
-.vertical .thumbWrap {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: var(--radius);
-  box-shadow: none;
-  z-index: 0;
-}
-
-.vertical::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(17, 24, 39, 0.85) 0%,
-    rgba(17, 24, 39, 0.2) 60%,
-    transparent 100%
-  );
-  z-index: 1;
-  pointer-events: none;
-  transition: background 0.3s ease;
-}
-
-.vertical:hover::after {
-  background: linear-gradient(
-    to top,
-    rgba(17, 24, 39, 0.9) 0%,
-    rgba(17, 24, 39, 0.3) 60%,
-    transparent 100%
-  );
-}
-
-.vertical .itemText {
-  position: relative;
-  z-index: 2;
-  padding: 24px;
-  text-align: center;
-  align-items: center;
-}
-
-.vertical .itemLabel {
-  font-size: 1.15rem;
-  letter-spacing: 0.01em;
-}
-
-.vertical .itemSub {
-  opacity: 0.8;
-}
-
-.vertical .arrow {
-  display: none;
 }
 
 /* ─── Text ─── */
@@ -217,7 +118,7 @@
   opacity: 0;
   transform: translateX(-6px);
   transition: opacity 0.2s ease, transform 0.2s ease;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(31, 41, 55, 0.4);
 }
 
 .menuItem:hover .arrow {

@@ -5,8 +5,7 @@ type MenuItem = {
   id: string;
   label: string;
   subtitle: string;
-  thumbnail?: string;
-  vertical?: boolean;
+  thumbnail: string;
 };
 
 const menuItems: MenuItem[] = [
@@ -15,27 +14,30 @@ const menuItems: MenuItem[] = [
     label: "Our Story",
     subtitle: "From a small rescue mission to a global movement for animal welfare.",
     thumbnail: "/carrousel/image03.webp",
-    vertical: true,
   },
   {
     id: "who-we-are",
     label: "Who We Are",
     subtitle: "Meet the passionate team behind our worldwide operations.",
+    thumbnail: "/carrousel/image01.webp",
   },
   {
     id: "social-media",
     label: "Social Media",
     subtitle: "Follow our daily rescues and success stories online.",
+    thumbnail: "/carrousel/image05.webp",
   },
   {
     id: "financial",
     label: "Financials",
     subtitle: "Transparency in how every donation is used to save lives.",
+    thumbnail: "/carrousel/image04.webp",
   },
   {
     id: "contact-us",
     label: "Contact Us",
     subtitle: "Get in touch for partnerships, press, or general inquiries.",
+    thumbnail: "/carrousel/image02.webp",
   },
 ];
 
@@ -45,21 +47,18 @@ const AboutUsNavigation = () => {
       {menuItems.map((item) => (
         <a
           key={item.id}
-          className={`${styles.menuItem} ${item.thumbnail ? styles.hasThumb : styles.noThumb} ${item.vertical ? styles.vertical : ""}`}
+          className={styles.menuItem}
           href={`#${item.id}`}
-          style={{ gridArea: item.id }}
         >
-          {item.thumbnail && (
-            <span className={styles.thumbWrap}>
-              <Image
-                src={item.thumbnail}
-                alt=""
-                fill
-                sizes={item.vertical ? "(max-width: 800px) 50vw, 300px" : "80px"}
-                className={styles.thumbImage}
-              />
-            </span>
-          )}
+          <span className={styles.thumbWrap}>
+            <Image
+              src={item.thumbnail}
+              alt=""
+              fill
+              sizes="88px"
+              className={styles.thumbImage}
+            />
+          </span>
           <span className={styles.itemText}>
             <span className={styles.itemLabel}>{item.label}</span>
             <span className={styles.itemSub}>{item.subtitle}</span>

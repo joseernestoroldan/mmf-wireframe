@@ -11,15 +11,20 @@
 
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  grid-template-areas:
-    "donate volunteer visit-us";
+  grid-template-areas: "donate volunteer visit-us";
 
   animation: menuIn 0.35s ease-out both;
 }
 
 @keyframes menuIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ─── Menu Item (base) ─── */
@@ -35,14 +40,17 @@
   position: relative;
   overflow: hidden;
 
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  transition: background 0.25s ease, border-color 0.25s ease, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+  background: rgba(31, 41, 55, 0.03);
+  border: 1px solid rgba(31, 41, 55, 0.1);
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .menuItem:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(31, 41, 55, 0.06);
+  border-color: rgba(31, 41, 55, 0.18);
   transform: translateY(-1px);
 }
 
@@ -85,7 +93,9 @@
   border-radius: 50%;
   background: var(--foreground, #0891b2);
   opacity: 0.55;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 .noThumb:hover::before {
@@ -116,8 +126,8 @@
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(17, 24, 39, 0.85) 0%,
-    rgba(17, 24, 39, 0.2) 60%,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.4) 60%,
     transparent 100%
   );
   z-index: 1;
@@ -128,8 +138,8 @@
 .vertical:hover::after {
   background: linear-gradient(
     to top,
-    rgba(17, 24, 39, 0.9) 0%,
-    rgba(17, 24, 39, 0.3) 60%,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 60%,
     transparent 100%
   );
 }
@@ -147,17 +157,17 @@
 }
 
 .vertical .itemLabel {
-  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-  font-size: 1.15rem;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  font-size: 2rem;
   font-weight: 600;
   letter-spacing: 0.01em;
   line-height: 1.25;
 }
 
 .vertical .itemSub {
-  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 400;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
   opacity: 0.8;
   line-height: 1.45;
   transition: opacity 0.25s ease;
@@ -181,9 +191,9 @@
 }
 
 .itemLabel {
-  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
   letter-spacing: -0.005em;
   line-height: 1.25;
   white-space: nowrap;
@@ -192,7 +202,7 @@
 }
 
 .itemSub {
-  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
   font-size: 0.78rem;
   font-weight: 400;
   opacity: 0.5;
@@ -211,8 +221,10 @@
   font-weight: 300;
   opacity: 0;
   transform: translateX(-6px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  color: rgba(255, 255, 255, 0.6);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  color: rgba(31, 41, 55, 0.4);
 }
 
 .menuItem:hover .arrow {
@@ -221,8 +233,15 @@
 }
 
 /* ─── Staggered entrance ─── */
-.menuItem { animation: itemIn 0.3s ease-out both; }
-.menuItem:nth-child(1) { animation-delay: 0.03s; }
-.menuItem:nth-child(2) { animation-delay: 0.06s; }
-.menuItem:nth-child(3) { animation-delay: 0.09s; }
-
+.menuItem {
+  animation: itemIn 0.3s ease-out both;
+}
+.menuItem:nth-child(1) {
+  animation-delay: 0.03s;
+}
+.menuItem:nth-child(2) {
+  animation-delay: 0.06s;
+}
+.menuItem:nth-child(3) {
+  animation-delay: 0.09s;
+}

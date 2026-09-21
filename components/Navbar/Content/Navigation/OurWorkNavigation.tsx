@@ -5,8 +5,7 @@ type MenuItem = {
   id: string;
   label: string;
   subtitle: string;
-  thumbnail?: string;
-  vertical?: boolean;
+  thumbnail: string;
 };
 
 const menuItems: MenuItem[] = [
@@ -21,7 +20,6 @@ const menuItems: MenuItem[] = [
     label: "CNVR",
     subtitle: "Catch · Neuter · Vaccinate · Return — our humane approach to managing and protecting street animal populations",
     thumbnail: "/carrousel/image05.webp",
-    vertical: true,
   },
   {
     id: "care-center",
@@ -45,11 +43,13 @@ const menuItems: MenuItem[] = [
     id: "education",
     label: "Education",
     subtitle: "Community outreach programs teaching compassion, responsible pet ownership, and animal welfare awareness",
+    thumbnail: "/carrousel/image03.webp",
   },
   {
     id: "adoption",
     label: "Adoption",
     subtitle: "Connecting rescued animals with loving forever homes through our comprehensive adoption process",
+    thumbnail: "/carrousel/image01.webp",
   },
 ];
 
@@ -59,21 +59,18 @@ const OurWorkNavigation = () => {
       {menuItems.map((item) => (
         <a
           key={item.id}
-          className={`${styles.menuItem} ${item.thumbnail ? styles.hasThumb : styles.noThumb} ${item.vertical ? styles.vertical : ""}`}
+          className={styles.menuItem}
           href={`#${item.id}`}
-          style={{ gridArea: item.id }}
         >
-          {item.thumbnail && (
-            <span className={styles.thumbWrap}>
-              <Image
-                src={item.thumbnail}
-                alt=""
-                fill
-                sizes={item.vertical ? "(max-width: 800px) 50vw, 300px" : "88px"}
-                className={styles.thumbImage}
-              />
-            </span>
-          )}
+          <span className={styles.thumbWrap}>
+            <Image
+              src={item.thumbnail}
+              alt=""
+              fill
+              sizes="88px"
+              className={styles.thumbImage}
+            />
+          </span>
           <span className={styles.itemText}>
             <span className={styles.itemLabel}>{item.label}</span>
             <span className={styles.itemSub}>{item.subtitle}</span>
