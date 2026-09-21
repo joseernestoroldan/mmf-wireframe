@@ -2,15 +2,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 400px;
+  width: max-content;
   list-style: none;
 }
 
 .menu li {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 1);
   font-family: var(--font-geist-sans), 'Inter', system-ui, sans-serif;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: bold;
   letter-spacing: -0.015em;
   text-decoration: none;
   cursor: pointer;
