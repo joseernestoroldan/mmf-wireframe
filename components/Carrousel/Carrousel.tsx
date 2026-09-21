@@ -35,7 +35,6 @@ const Carrousel = () => {
 
   return (
     <section className={styles.carousel} aria-label="Featured stories carousel">
-      {/* <Navbar />2 */}
       <div className={styles.slide}>
         <Image
           className={styles.image}
@@ -46,9 +45,6 @@ const Carrousel = () => {
         />
         <div className={styles.scrim} />
         <div className={`${styles.content} ${isFading ? styles.fadeOut : styles.fadeIn}`}>
-          <p className={styles.counter}>
-            {String(activeIndex + 1).padStart(2, "0")} / {String(carouselItems.length).padStart(2, "0")}
-          </p>
           <h2 className={styles.title}>{activeItem.title}</h2>
           <p className={styles.description}>{activeItem.description}</p>
           <a className={styles.link} href={activeItem.href}>
@@ -62,9 +58,6 @@ const Carrousel = () => {
       <NextArrow onClick={showNext} />
 
       <div className={styles.navigation} aria-label="Choose a slide">
-        <span className={styles.navigationCount} aria-hidden="true">
-          {String(activeIndex + 1).padStart(2, "0")}
-        </span>
         {carouselItems.map((item, index) => (
           <button
             className={`${styles.dot} ${index === activeIndex ? styles.activeDot : ""}`}
