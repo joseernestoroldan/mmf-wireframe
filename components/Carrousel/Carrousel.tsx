@@ -6,7 +6,6 @@ import { carouselItems } from "../../data/Carrousel";
 import NextArrow from "./Arrows/NextArrow";
 import PreviousArrow from "./Arrows/PreviousArrow";
 import styles from "./Carrousel.module.css";
-import Navbar from "../Header/Navbar/Navbar";
 
 const Carrousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);

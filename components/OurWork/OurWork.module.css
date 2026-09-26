@@ -12,102 +12,200 @@
 
 .heading {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 3rem;
+  font-size: 3.25rem;
   font-weight: 500;
   text-align: center;
   color: #0891b2;
-  margin-bottom: 80px;
-  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+  letter-spacing: -0.025em;
 }
 
+.headingAccent {
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin: 0 auto 20px;
+  background: linear-gradient(90deg, #0891b2, #06b6d4);
+  border-radius: 2px;
+}
+
+.subtitle {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+  color: #6b7280;
+  max-width: 520px;
+  margin: 0 auto 80px;
+}
+
+/* ─── Grid ─── */
 .grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 60px 32px;
+  gap: 20px;
 }
 
+/* ─── Card ─── */
 .card {
-  width: calc(25% - 24px); /* 4 columns */
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  text-decoration: none;
+  width: calc(25% - 15px);
   position: relative;
-  background-color: rgba(0, 0, 0, 0.05);
-  padding: 20px;
-  border-radius: 10px;
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
 }
 
+/* ─── Background Image ─── */
 .imageWrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  border-radius: 4px;
-  background: #f3f4f6; /* Subtle fallback background */
+  position: absolute;
+  inset: 0;
 }
 
 .image {
   object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.2, 1, 0.2, 1);
+  transition: transform 0.7s cubic-bezier(0.2, 1, 0.2, 1);
 }
 
 .card:hover .image {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
+/* ─── Gradient overlay for text readability ─── */
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.25) 45%,
+    transparent 100%
+  );
+  transition: background 0.5s ease;
+  pointer-events: none;
+}
+
+.card:hover .imageOverlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.35) 50%,
+    transparent 100%
+  );
+}
+
+/* ─── Text Content ─── */
 .cardContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  color: #1f2937;
+  gap: 8px;
+  z-index: 2;
 }
 
 .cardTitle {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-weight: 600;
   margin: 0;
+  color: #ffffff;
   letter-spacing: -0.01em;
-  transition: color 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .cardDescription {
-  font-family: 'Georgia', 'Times New Roman', serif; /* A nod to editorial serif for body copy */
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.55;
   margin: 0;
-  color: #4b5563;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 0.6;
+  transform: translateY(0);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .card:hover .cardTitle {
-  color: #0891b2;
+  transform: translateY(-4px);
 }
 
-/* Responsive Breakpoints */
+.card:hover .cardDescription {
+  opacity: 1;
+}
+
+.card:focus-visible {
+  outline: 2px solid #0891b2;
+  outline-offset: 4px;
+}
+
+/* ─── Entrance animation ─── */
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: cardFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ─── Responsive ─── */
 @media (max-width: 1200px) {
   .card {
-    width: calc(33.333% - 22px);
+    width: calc(33.333% - 14px);
   }
 }
 
 @media (max-width: 800px) {
   .card {
-    width: calc(50% - 16px);
+    width: calc(50% - 10px);
   }
   .heading {
     font-size: 2.5rem;
+  }
+  .subtitle {
     margin-bottom: 60px;
+  }
+  .grid {
+    gap: 16px;
+  }
+  /* Show description by default on touch devices */
+  .cardDescription {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .cardTitle {
+    transform: translateY(0);
   }
 }
 
 @media (max-width: 500px) {
   .card {
     width: 100%;
-    aspect-ratio: auto;
-  }
-  .imageWrapper {
     aspect-ratio: 16 / 10;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+  }
+  .card,
+  .card:hover,
+  .image {
+    transition: none;
+    transform: none;
   }
 }

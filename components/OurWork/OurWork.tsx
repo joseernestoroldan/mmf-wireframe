@@ -8,7 +8,7 @@ const workItems = [
     title: "Rescue",
     description: "Saving animals in distress and providing immediate medical care and safety.",
     link: "/our-work/rescue",
-    image: "/carrousel/image01.webp", // Placeholder path
+    image: "/carrousel/image01.webp",
   },
   {
     id: "cnvr",
@@ -59,20 +59,29 @@ const OurWork = () => {
     <section className={styles.container}>
       <div className={styles.content}>
         <h2 className={styles.heading}>Our Work</h2>
-        
+        <span className={styles.headingAccent} aria-hidden="true" />
+        <p className={styles.subtitle}>
+          From rescue to rehabilitation, we build programs that give every animal a second chance.
+        </p>
+
         <div className={styles.grid}>
-          {workItems.map((item) => (
-            <Link href={item.link} key={item.id} className={styles.card}>
+          {workItems.map((item, index) => (
+            <Link
+              href={item.link}
+              key={item.id}
+              className={styles.card}
+              style={{ animationDelay: `${index * 80}ms` }}
+            >
               <div className={styles.imageWrapper}>
-                
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
+                  sizes="(max-width: 500px) 100vw, (max-width: 800px) 50vw, (max-width: 1200px) 33vw, 310px"
                   className={styles.image}
                 />
-                
               </div>
+              <div className={styles.imageOverlay} aria-hidden="true" />
               <div className={styles.cardContent}>
                 <h3 className={styles.cardTitle}>{item.title}</h3>
                 <p className={styles.cardDescription}>{item.description}</p>
@@ -86,4 +95,3 @@ const OurWork = () => {
 };
 
 export default OurWork;
-
