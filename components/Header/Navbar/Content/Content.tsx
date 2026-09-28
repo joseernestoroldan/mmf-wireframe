@@ -1,4 +1,3 @@
-import { Children } from "react";
 import styles from "./Content.module.css";
 import OurWorkNavigation from "./Navigation/OurWorkNavigation";
 import AboutUsNavigation from "./Navigation/AboutUsNavigation";
@@ -10,13 +9,16 @@ type ContentProps = {
   setNavbarState: (
     state: "menu" | "our work" | "about us" | "get involved",
   ) => void;
+  onPanelEnter: () => void;
+  onPanelLeave: () => void;
 };
 
-const Content = ({ navbarState, setNavbarState }: ContentProps) => {
+const Content = ({ navbarState, setNavbarState, onPanelEnter, onPanelLeave }: ContentProps) => {
   return (
     <div
       className={`${styles.content} ${navbarState !== "menu" ? styles.visible : styles.hidden}`}
-      onMouseLeave={() => setNavbarState("menu")}
+      onMouseEnter={onPanelEnter}
+      onMouseLeave={onPanelLeave}
     >
       <header className={styles.header}>
         <div className={styles.titleContainer}>
@@ -32,9 +34,15 @@ const Content = ({ navbarState, setNavbarState }: ContentProps) => {
         <DonateButton />
       </header>
       <hr />
-      {navbarState === "our work" && <OurWorkNavigation />}
-      {navbarState === "about us" && <AboutUsNavigation />}
-      {navbarState === "get involved" && <GetInvolvedNavigation />}
+      {navbarState === "our work" && (
+        <OurWorkNavigation onItemClick={() => setNavbarState("menu")} />
+      )}
+      {navbarState === "about us" && (
+        <AboutUsNavigation onItemClick={() => setNavbarState("menu")} />
+      )}
+      {navbarState === "get involved" && (
+        <GetInvolvedNavigation onItemClick={() => setNavbarState("menu")} />
+      )}
     </div>
   );
 };

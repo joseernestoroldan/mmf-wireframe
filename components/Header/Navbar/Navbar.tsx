@@ -8,14 +8,16 @@ type NavbarProps = {
   setNavbarState: (
     state: "menu" | "our work" | "about us" | "get involved",
   ) => void;
+  onMenuLeave: () => void;
+  onMenuEnter: () => void;
 };
 
-const Navbar = ({ navbarState, setNavbarState }: NavbarProps) => {
+const Navbar = ({ navbarState, setNavbarState, onMenuLeave, onMenuEnter }: NavbarProps) => {
   return (
     <nav
       className={`${styles.navbar} ${navbarState === "menu" ? styles.visible : styles.hidden}`}
     >
-      <Menu setNavbarState={setNavbarState} />
+      <Menu setNavbarState={setNavbarState} onMenuEnter={onMenuEnter} onMenuLeave={onMenuLeave} />
       <DonateButton />
     </nav>
   );
