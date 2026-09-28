@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./OurWorkNavigation.module.css";
 
 type MenuItem = {
@@ -6,6 +7,10 @@ type MenuItem = {
   label: string;
   subtitle: string;
   thumbnail: string;
+};
+
+type OurWorkNavigationProps = {
+  onItemClick?: () => void;
 };
 
 const menuItems: MenuItem[] = [
@@ -53,14 +58,15 @@ const menuItems: MenuItem[] = [
   },
 ];
 
-const OurWorkNavigation = () => {
+const OurWorkNavigation = ({ onItemClick }: OurWorkNavigationProps) => {
   return (
     <nav className={styles.menu} aria-label="Our Work programs">
       {menuItems.map((item) => (
-        <a
+        <Link
           key={item.id}
           className={styles.menuItem}
-          href={`#${item.id}`}
+          href={`/${item.id}`}
+          onClick={onItemClick}
         >
           <span className={styles.thumbWrap}>
             <Image
@@ -76,10 +82,11 @@ const OurWorkNavigation = () => {
             <span className={styles.itemSub}>{item.subtitle}</span>
           </span>
           <span className={styles.arrow}>›</span>
-        </a>
+        </Link>
       ))}
     </nav>
   );
 };
 
 export default OurWorkNavigation;
+

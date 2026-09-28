@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./AboutUsNavigation.module.css";
 
 type MenuItem = {
@@ -6,6 +7,10 @@ type MenuItem = {
   label: string;
   subtitle: string;
   thumbnail: string;
+};
+
+type AboutUsNavigationProps = {
+  onItemClick?: () => void;
 };
 
 const menuItems: MenuItem[] = [
@@ -28,7 +33,7 @@ const menuItems: MenuItem[] = [
     thumbnail: "/carrousel/image05.webp",
   },
   {
-    id: "financial",
+    id: "financials",
     label: "Financials",
     subtitle: "Transparency in how every donation is used to save lives.",
     thumbnail: "/carrousel/image04.webp",
@@ -41,14 +46,15 @@ const menuItems: MenuItem[] = [
   },
 ];
 
-const AboutUsNavigation = () => {
+const AboutUsNavigation = ({ onItemClick }: AboutUsNavigationProps) => {
   return (
     <nav className={styles.menu} aria-label="About Us navigation">
       {menuItems.map((item) => (
-        <a
+        <Link
           key={item.id}
           className={styles.menuItem}
-          href={`#${item.id}`}
+          href={`/${item.id}`}
+          onClick={onItemClick}
         >
           <span className={styles.thumbWrap}>
             <Image
@@ -64,10 +70,11 @@ const AboutUsNavigation = () => {
             <span className={styles.itemSub}>{item.subtitle}</span>
           </span>
           <span className={styles.arrow}>›</span>
-        </a>
+        </Link>
       ))}
     </nav>
   );
 };
 
 export default AboutUsNavigation;
+

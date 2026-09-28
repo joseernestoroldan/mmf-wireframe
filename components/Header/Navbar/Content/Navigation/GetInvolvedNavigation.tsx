@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./GetInvolvedNavigation.module.css";
 
 type MenuItem = {
@@ -7,6 +8,10 @@ type MenuItem = {
   subtitle: string;
   thumbnail?: string;
   vertical?: boolean;
+};
+
+type GetInvolvedNavigationProps = {
+  onItemClick?: () => void;
 };
 
 const menuItems: MenuItem[] = [
@@ -33,14 +38,15 @@ const menuItems: MenuItem[] = [
   },
 ];
 
-const GetInvolvedNavigation = () => {
+const GetInvolvedNavigation = ({ onItemClick }: GetInvolvedNavigationProps) => {
   return (
     <nav className={styles.menu} aria-label="Get Involved programs">
       {menuItems.map((item) => (
-        <a
+        <Link
           key={item.id}
           className={`${styles.menuItem} ${item.thumbnail ? styles.hasThumb : styles.noThumb} ${item.vertical ? styles.vertical : ""}`}
-          href={`#${item.id}`}
+          href={`/${item.id}`}
+          onClick={onItemClick}
           style={{ gridArea: item.id }}
         >
           {item.thumbnail && (
@@ -59,10 +65,11 @@ const GetInvolvedNavigation = () => {
             <span className={styles.itemSub}>{item.subtitle}</span>
           </span>
           <span className={styles.arrow}>›</span>
-        </a>
+        </Link>
       ))}
     </nav>
   );
 };
 
 export default GetInvolvedNavigation;
+
