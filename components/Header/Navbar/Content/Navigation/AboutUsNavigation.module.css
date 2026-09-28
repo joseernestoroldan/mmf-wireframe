@@ -1,12 +1,12 @@
 /* ─── Menu Grid ─── */
 .menu {
-  --thumb-size: 150px;
+  --thumb-size: 88px;
   --radius: 12px;
   --gap: 10px;
 
   display: grid;
   gap: var(--gap);
-  padding-top: 8px;
+  padding: 8px 0;
   height: 100%;
 
   grid-template-columns: 1fr 1fr;
@@ -24,8 +24,8 @@
 .menuItem {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 20px 20px;
+  gap: 14px;
+  padding: 12px 16px;
   border-radius: var(--radius);
   text-decoration: none;
   color: #1f2937;
@@ -80,8 +80,8 @@
 
 .itemLabel {
   font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight:600;
   letter-spacing: -0.005em;
   line-height: 1.25;
   white-space: nowrap;
@@ -91,7 +91,7 @@
 
 .itemSub {
   font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   font-weight: 400;
   opacity: 0.5;
   line-height: 1.45;

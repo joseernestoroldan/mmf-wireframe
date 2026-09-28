@@ -4,12 +4,16 @@
   align-items: center;
   width: max-content;
   list-style: none;
+  pointer-events: auto;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.4) 0%, transparent 80%);
+  padding: 4px 12px;
+  border-radius: 100px;
 }
 
 .menu li {
   color: rgba(255, 255, 255, 1);
   font-family: var(--font-geist-sans), 'Inter', system-ui, sans-serif;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: -0.015em;
   text-decoration: none;

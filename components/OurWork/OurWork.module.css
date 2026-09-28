@@ -12,8 +12,8 @@
 
 .heading {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 3.25rem;
-  font-weight: 500;
+  font-size: clamp(40px, 6vw, 92px);
+  font-weight: 700;
   text-align: center;
   color: #0891b2;
   margin: 0 0 12px;

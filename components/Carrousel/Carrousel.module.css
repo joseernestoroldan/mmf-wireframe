@@ -81,9 +81,14 @@
   max-width: 528px;
   margin-bottom: 28px;
   color: #edf3e6;
-  font-size: 17.6px;
+  font-size: 22px;
+  font-weight: 700;
+  opacity: 0.9;
   line-height: 1.6;
   text-shadow: 0 1px 4px rgba(17, 24, 39, 0.6);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5) 0%, transparent 80%);
+  padding: 16px 24px;
+  border-radius: 24px;
 }
 
 .link {

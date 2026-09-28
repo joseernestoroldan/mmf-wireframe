@@ -34,7 +34,7 @@
   padding: 20px 20px;
   border-radius: var(--radius);
   text-decoration: none;
-  color: #1f2937;
+  color: #3f3f3f;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -88,7 +88,7 @@
 
 .itemLabel {
   font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-  font-size: 0.95rem;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: -0.005em;
   line-height: 1.25;
