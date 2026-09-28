@@ -1,6 +1,7 @@
 import OurWork from "@/components/OurWork/OurWork";
 import styles from "./page.module.css";
 import Carrousel from "@/components/Carrousel/Carrousel";
+import OurMission from "@/components/OurMission/OurMission";
 
 export default function Home() {
   return (
@@ -8,7 +9,8 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.container}>
           <Carrousel />
-          <OurWork/>
+          <OurWork />
+          <OurMission />
         </div>
       </main>
     </div>
