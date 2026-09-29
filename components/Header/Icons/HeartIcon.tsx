@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface HeartIconProps extends React.SVGProps<SVGSVGElement> {}
+type HeartIconProps = React.SVGProps<SVGSVGElement>;
 
 const HeartIcon: React.FC<HeartIconProps> = (props) => {
   return (
