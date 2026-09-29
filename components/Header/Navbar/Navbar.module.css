@@ -4,29 +4,26 @@
   min-height: 100px;
   position: absolute;
   right: 0;
+  /* background-color: red; */
   top: 20px;
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border-radius: 10px; */
 
-  /* ── Premium Dock Glass ── */
-  /* background: rgba(18, 20, 24, 0.8); */
-  /* backdrop-filter: blur(28px) saturate(1.8); */
-  /* -webkit-backdrop-filter: blur(28px) saturate(1.8); */
-  /* border: 1px solid rgba(255, 255, 255, 0.1); */
-  /* box-shadow:
-    0 24px 48px rgba(17, 24, 39, 0.5),
-    0 4px 12px rgba(17, 24, 39, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15); */
-
-  /* Animation basis */
   will-change: opacity, transform, filter;
   transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
               transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
               filter 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+@media (max-width: 1024px) {
+  .navbar {
+    justify-content: flex-end;
+    gap: 20px;
+  }
+}
+
 
 .visible {
   opacity: 1;
