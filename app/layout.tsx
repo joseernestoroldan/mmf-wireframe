@@ -22,7 +22,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
+        <div
+          style={{
+            position: "absolute",
+            zIndex: 10,
+            background: "linear-gradient(to bottom, rgba(0, 0, 0, .8), transparent)",
+            width: "100%",
+            height: "160px",
+          }}
+        ></div>
         <Header />
+
         {children}
       </body>
     </html>

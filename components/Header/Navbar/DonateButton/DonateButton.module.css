@@ -4,8 +4,8 @@
   justify-content: center;
   gap: 8px;
   width: max-content;
-  min-height: 45.6px;
-  padding: 11.2px 21.6px;
+  min-height: 50px;
+  padding: 11.2px 30px;
   border: 1px solid rgba(234, 179, 8, 0.6);
   border-radius: 9999px;
   color: white; /* Dark text for contrast on yellow */
@@ -13,7 +13,7 @@
   background: linear-gradient(135deg, #facc15, #eab308);
   cursor: pointer;
   font-family: var(--font-geist-sans), 'Inter', system-ui, sans-serif;
-  font-size: 12.48px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
