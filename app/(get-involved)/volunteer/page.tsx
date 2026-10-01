@@ -10,28 +10,11 @@ export const metadata: Metadata = {
 export default function VolunteerPage() {
   return (
     <ContentPage
-      badge="Get Involved"
       title="Volunteer"
-      subtitle="Join our team on the ground. Give your time to help in our clinics, sanctuaries, and outreach programs."
-      image="/carrousel/image01.webp"
-      details={[
-        {
-          heading: "Clinic & Shelter Support",
-          text: "Help with daily animal care, socialization, facility maintenance, and enrichment activities.",
-        },
-        {
-          heading: "Community Outreach",
-          text: "Assist with educational campaigns, vaccine drives, and local humane education events.",
-        },
-        {
-          heading: "Remote Volunteer Roles",
-          text: "Contribute through digital advocacy, content writing, design, translation, and fundraising coordination.",
-        },
-      ]}
+      description="Join our team on the ground. Give your time to help in our clinics, sanctuaries, and outreach programs."
+      imageURL="/carrousel/image01.webp"
     >
-      <p>
-        Volunteers are the heartbeat of our work. Whether you are comforting a recovering rescue animal, helping maintain a sanctuary habitat, or raising awareness online, your time and love make an unforgettable difference.
-      </p>
+      <p>Content</p>
     </ContentPage>
   );
 }

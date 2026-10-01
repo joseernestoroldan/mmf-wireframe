@@ -10,28 +10,11 @@ export const metadata: Metadata = {
 export default function RescuePage() {
   return (
     <ContentPage
-      badge="Programs"
       title="Rescue"
-      subtitle="Emergency interventions to save animals from abuse, neglect, and dangerous situations worldwide."
-      image="/carrousel/image03.webp"
-      details={[
-        {
-          heading: "Emergency Response",
-          text: "Deploying rapid-response teams to extract animals from acute danger, severe neglect, and illegal trafficking.",
-        },
-        {
-          heading: "Urgent Veterinary Care",
-          text: "Providing immediate diagnostics, surgery, pain relief, and intensive care upon rescue.",
-        },
-        {
-          heading: "Rehabilitation Path",
-          text: "Guiding every rescued animal through a tailored medical and psychological recovery journey.",
-        },
-      ]}
+      description="Emergency interventions to save animals from abuse, neglect, and dangerous situations worldwide."
+      imageURL="/carrousel/image01.webp"
     >
-      <p>
-        Our rescue operations are the lifeline for animals caught in critical situations. Whether dealing with severe cruelty cases, abandoned strays in need of trauma care, or animals trapped in high-risk environments, our teams take immediate action to bring them to safety.
-      </p>
+      <p>Content</p>
     </ContentPage>
   );
 }
