@@ -106,7 +106,7 @@ const NavbarMobile = ({ toggleNav }: { toggleNav: () => void }) => {
 
         <footer className={styles.footer}>
           <Link
-            href="/donate"
+            href="/#donation"
             onClick={toggleNav}
             className={styles.donateButton}
           >

@@ -1,11 +1,12 @@
+import Link from "next/link";
 import HeartIcon from "../../Icons/HeartIcon";
 import styles from "./DonateButton.module.css";
 
 const DonateButton = () => {
   return (
-    <button className={styles.donateButton} type="button">
+    <Link className={styles.donateButton} href="/#donation">
       Donate <HeartIcon className={styles.icon} />
-    </button>
+    </Link>
   );
 };
 

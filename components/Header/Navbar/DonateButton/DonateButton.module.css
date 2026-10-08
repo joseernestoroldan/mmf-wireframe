@@ -10,6 +10,8 @@
   border-radius: 9999px;
   color: white; /* Dark text for contrast on yellow */
   text-shadow: black 0.5px 0.5px 10px;
+  text-decoration: none;
+  white-space: nowrap;
   background: linear-gradient(135deg, #facc15, #eab308);
   cursor: pointer;
   font-family: var(--font-geist-sans), 'Inter', system-ui, sans-serif;
