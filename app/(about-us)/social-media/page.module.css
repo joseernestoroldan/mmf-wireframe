@@ -1,73 +1,134 @@
-.socialArticle {
+.page {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: clamp(1.5rem, 4vw, 3rem) 0;
-  background-color: #ffffff;
+  width: 100%;
+  flex: 1;
+  background-color: var(--background, #f9fafb);
+}
+
+/* ─── Hero: dark gradient band ─── */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  text-align: center;
+  padding: clamp(96px, 14vw, 168px) 24px clamp(64px, 10vw, 120px);
+  background:
+    radial-gradient(60% 85% at 12% 0%, rgba(8, 145, 178, 0.38), transparent 62%),
+    radial-gradient(55% 75% at 92% 100%, rgba(245, 158, 11, 0.16), transparent 58%),
+    linear-gradient(135deg, #0f172a 0%, #0b1f30 58%, #0c2b3a 100%);
   font-family: var(--font-geist-sans), 'Inter', system-ui, sans-serif;
 }
 
-.socialArticle > * {
-  max-width: 68ch;
-}
-
-.socialTitleSecondary {
-  font-size: clamp(1.75rem, 1.3rem + 2vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: #111827; /* text-gray-900 */
-  text-wrap: balance;
-  margin: 0;
-  animation: socialFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.socialTitleSecondary::after {
-  content: "";
-  display: block;
-  width: 3rem;
+.topAccentBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 3px;
-  margin-top: 1rem;
-  background-color: #0891b2; /* cyan-600 */
-  transform-origin: left;
-  animation: socialBarWipe 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
+  background: linear-gradient(90deg, #0891b2 0%, #06b6d4 40%, #f59e0b 80%, #0891b2 100%);
 }
 
-.socialTitleTertiary {
-  font-size: clamp(1.15rem, 1.05rem + 0.5vw, 1.4rem);
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
   font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-  color: #1f2937; /* text-gray-800 */
-  text-wrap: balance;
-  margin: 1.5rem 0 0;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #67e8f9;
 }
 
-.socialParagraph {
-  font-size: clamp(1rem, 0.97rem + 0.15vw, 1.09rem);
-  font-weight: 400;
-  line-height: 1.75;
-  color: #6b7280; /* text-gray-500 */
+.title {
   margin: 0;
+  font-size: clamp(2.5rem, 6vw, 4.25rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
 }
 
-.socialQuote {
-  border-left: 3px solid #0891b2; /* cyan-600 */
-  padding-left: clamp(1rem, 3vw, 1.75rem);
-  margin: 0.5rem 0;
+.titleAccent {
+  display: block;
+  width: 64px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #f59e0b;
+}
+
+.lead {
+  margin: 0;
+  max-width: 640px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-style: italic;
+  font-size: clamp(1.05rem, 1rem + 0.5vw, 1.3rem);
+  line-height: 1.65;
+  color: #cbd5e1;
+}
+
+/* ─── Cards region ─── */
+.main {
+  width: 100%;
+  background-color: var(--background, #f9fafb);
+}
+
+/* ─── Closing band ─── */
+.closing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+  padding: clamp(56px, 8vw, 88px) 24px;
+  background-color: #0f172a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-geist-sans), 'Inter', system-ui, sans-serif;
+  animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.closingAccent {
+  display: block;
+  width: 56px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #0891b2, #06b6d4 60%, #f59e0b);
+}
+
+.quote {
+  margin: 0;
+  max-width: 820px;
   font-family: 'Georgia', 'Times New Roman', serif;
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.3rem);
+  font-size: clamp(1.25rem, 1.1rem + 1vw, 1.75rem);
   line-height: 1.6;
-  color: #374151; /* text-gray-700 */
-  animation: socialFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+  color: #e2e8f0;
 }
 
-@keyframes socialFadeUp {
+.quoteCta {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #38bdf8;
+}
+
+/* ─── Entrance animation ─── */
+@keyframes heroFadeUp {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -75,39 +136,39 @@
   }
 }
 
-@keyframes socialBarWipe {
-  from {
-    transform: scaleX(0);
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .hero {
+    padding: 88px 20px 56px;
   }
-  to {
-    transform: scaleX(1);
+
+  .heroContent {
+    gap: 14px;
+  }
+
+  .title {
+    font-size: clamp(2.25rem, 9vw, 2.75rem);
+  }
+
+  .lead {
+    font-size: 1.05rem;
+  }
+
+  .quote {
+    font-size: 1.25rem;
   }
 }
 
-/* ─── Responsive ─── */
-@media (max-width: 768px) {
-  .socialArticle {
-    gap: 1.25rem;
-    padding: 1.5rem 0;
-  }
-
-  .socialArticle > * {
-    max-width: 100%;
-  }
-
-  .socialTitleTertiary {
-    margin-top: 1rem;
-  }
-
-  .socialQuote {
-    padding-left: 1rem;
+@media (max-width: 480px) {
+  .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .socialTitleSecondary,
-  .socialTitleSecondary::after,
-  .socialQuote {
+  .heroContent,
+  .closing {
     animation: none;
     opacity: 1;
     transform: none;
