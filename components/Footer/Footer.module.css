@@ -1,0 +1,355 @@
+.footer {
+  width: 100%;
+  background-color: #0f172a;
+  color: #f3f4f6;
+  position: relative;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-geist-sans), 'Inter', system-ui, sans-serif;
+  overflow: hidden;
+}
+
+/* Gradient accent bar along the top edge */
+.topAccentBar {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #0891b2 0%, #06b6d4 40%, #f59e0b 80%, #0891b2 100%);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 24px 32px;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.4fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ─── Column 1: Brand & Logo ─── */
+.brandColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.logoWrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footerLogo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  position: relative;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s cubic-bezier(0.2, 1, 0.2, 1), border-color 0.3s ease;
+}
+
+.footerLogo:hover {
+  transform: translateY(-2px) scale(1.03);
+  border-color: rgba(8, 145, 178, 0.4);
+}
+
+.brandName {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.brandTagline {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  max-width: 360px;
+  margin: 0;
+}
+
+.socialSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.socialLabel {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #cbd5e1;
+}
+
+.socialList {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  font-size: 1.15rem;
+  text-decoration: none;
+  transition: transform 0.25s cubic-bezier(0.2, 1, 0.2, 1),
+              background-color 0.25s ease,
+              border-color 0.25s ease,
+              color 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.socialLink:hover {
+  transform: translateY(-3px);
+  background-color: rgba(8, 145, 178, 0.2);
+  border-color: #06b6d4;
+  color: #38bdf8;
+  box-shadow: 0 4px 14px rgba(8, 145, 178, 0.35);
+}
+
+.socialLink:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 3px;
+}
+
+/* ─── Column 2: Registered Address ─── */
+.addressColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.columnHeading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.headingIcon {
+  color: #06b6d4;
+  font-size: 1rem;
+}
+
+.addressCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.address {
+  font-style: normal;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  display: flex;
+  flex-direction: column;
+}
+
+.addressLine {
+  margin: 0;
+}
+
+.contactLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #38bdf8;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 4px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.contactLink:hover {
+  color: #7dd3fc;
+  transform: translateX(2px);
+}
+
+.contactLink:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+/* ─── Column 3: Tax-Exempt Status ─── */
+.legalColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.badge {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #fbbf24;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.taxText {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.highlightTaxId {
+  color: #f3f4f6;
+  font-weight: 600;
+}
+
+.donateAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #0891b2, #0284c7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  margin-top: 4px;
+  align-self: flex-start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.donateAction:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(8, 145, 178, 0.4);
+  background: linear-gradient(135deg, #0e7490, #0369a1);
+}
+
+.donateAction:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 3px;
+}
+
+/* ─── Bottom Bar ─── */
+.bottomBar {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.8125rem;
+  color: #94a3b8;
+}
+
+.copyright {
+  margin: 0;
+}
+
+.bottomLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bottomLink {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.bottomLink:hover {
+  color: #38bdf8;
+}
+
+.bottomLink:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .mainGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .legalColumn {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 680px) {
+  .container {
+    padding: 48px 20px 28px;
+  }
+
+  .mainGrid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .legalColumn {
+    grid-column: span 1;
+  }
+
+  .brandTagline {
+    max-width: 100%;
+  }
+
+  .bottomBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footerLogo,
+  .socialLink,
+  .donateAction,
+  .contactLink {
+    transition: none;
+    transform: none;
+  }
+}
