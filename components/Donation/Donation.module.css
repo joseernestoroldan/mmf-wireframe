@@ -4,7 +4,7 @@
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
   width: 100%;
   background-color: #f9fafb;
-  border-top: 1px solid rgba(229, 231, 235, 0.5);
+  border-top: 1px solid rgba(229, 231, 235, 0.1);
   scroll-margin-top: 24px;
 }
 
