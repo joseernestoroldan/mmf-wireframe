@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import Carrousel from "@/components/Carrousel/Carrousel";
 import OurMission from "@/components/OurMission/OurMission";
 import Donation from "@/components/Donation/Donation";
+import ImpactDiagram from "@/components/ImpactDiagram/ImpactDiagram";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
           <Carrousel />
           <OurWork />
           <OurMission />
+          <ImpactDiagram/>
           <Donation />
         </div>
       </main>
