@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Logo from "@/components/Header/Logo/Logo";
+import FooterBadges from "@/components/Footer/FooterBadges/FooterBadges";
 import styles from "./Footer.module.css";
 import {
   FaInstagram,
@@ -116,6 +117,8 @@ const Footer = () => {
             <Link href="/#donation" className={styles.donateAction}>
               Make a Donation
             </Link>
+
+            <FooterBadges />
           </div>
         </div>
 
