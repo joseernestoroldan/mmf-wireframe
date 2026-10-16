@@ -37,14 +37,16 @@ const SOCIAL_LINKS = [
 const Footer = () => {
   return (
     <footer className={styles.footer} role="contentinfo">
-      <div className={styles.topAccentBar} />
-
       <div className={styles.container}>
         <div className={styles.mainGrid}>
           {/* Column 1: Logo & Social Networks */}
           <div className={styles.brandColumn}>
             <div className={styles.logoWrapper}>
-              <Logo className={styles.footerLogo} priority={false} />
+              <Logo
+                className={styles.footerLogo}
+                priority={false}
+                src="/logo.jpg"
+              />
             </div>
             <h2 className={styles.brandName}>Magic Marble Foundation</h2>
             <p className={styles.brandTagline}>

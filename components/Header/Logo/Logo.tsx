@@ -5,9 +5,10 @@ import styles from "./Logo.module.css";
 type LogoProps = {
   className?: string;
   priority?: boolean;
+  src?: string;
 };
 
-const Logo = ({ className, priority = true }: LogoProps) => {
+const Logo = ({ className, priority = true, src = "/logo.png" }: LogoProps) => {
   return (
     <Link
       className={className || styles.logo}
@@ -16,7 +17,7 @@ const Logo = ({ className, priority = true }: LogoProps) => {
     >
       <Image
         className={styles.logoImage}
-        src="/logo.png"
+        src={src}
         alt="Organization logo"
         width={120}
         height={120}
