@@ -45,7 +45,7 @@ const Footer = () => {
               <Logo
                 className={styles.footerLogo}
                 priority={false}
-                src="/logo.jpg"
+                src="/logoBlack.png"
               />
             </div>
             <h2 className={styles.brandName}>Magic Marble Foundation</h2>

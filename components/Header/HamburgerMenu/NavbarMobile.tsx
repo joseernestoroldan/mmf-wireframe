@@ -76,7 +76,7 @@ const NavbarMobile = ({ toggleNav }: { toggleNav: () => void }) => {
       >
         <header className={styles.header}>
           <Image
-            src="/logo.jpg"
+            src="/logoBlack.png"
             alt="Magic Marble Foundation"
             width={64}
             height={64}
