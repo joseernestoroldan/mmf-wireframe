@@ -72,7 +72,7 @@ const ImpactDiagram = () => {
 
         {/* Center circle with logo */}
         <div className={styles.centerCircle}>
-          <Logo className={styles.logoWrapper} priority={false} />
+          <Logo className={styles.logoWrapper} priority={false} src="/logoBlack.png"/>
         </div>
 
         {/* Connector lines */}
