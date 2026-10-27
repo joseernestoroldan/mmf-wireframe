@@ -25,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <div
           style={{
-            position: "absolute",
+            position: "fixed",
             zIndex: 10,
             background: "linear-gradient(to bottom, rgba(0, 0, 0, .8), transparent)",
             width: "100%",
